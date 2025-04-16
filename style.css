@@ -21,20 +21,59 @@ body > * {
     max-width: 600px;
     position: relative;
     background-color: white;
-    border: 2px solid black;
+
+    transform: translateY(-6px);
     border-radius: 10px;
     margin: 10px;
     width: 200px;
     min-height: 240px;
     scrollbar-width: none;
+    border: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
 }
 
+.recipeCard:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+    transform: translateY(-8px) scale(1.02);
+}
+
+input::placeholder, textarea::placeholder {
+    color: black;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+
+.form-wrapper {
+    padding: 10px;
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    width: 70%;
+    margin: 20px auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+}
 .recipeCard .bi-trash {
-    color: #1e7d8c;
-    object-fit: cover;
-    z-index: -1;
-    top: 4px;
-    right:4px;
+    color: lightskyblue;
+}
+
+.dishInputForm {
+    text-align: center;
+}
+
+.dishInputForm {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 }
 
 .recipeCard img {
@@ -46,26 +85,50 @@ body > * {
 }
 
 .inputRow {
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
+    gap: 12px;
+    align-items: center;
+
+
 }
 
 .inputRow >*{
-
+border-radius: 10px;
     padding: 4px;
     margin: 4px;
+    border:none;
+    color: black;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    resize: none;
+    line-height: 1.4;
+    height: 48px;
+    box-sizing: border-box;
+    vertical-align: middle;
 }
+
 
 .addBtn{
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
-    padding: 4px;
-    margin: 4px;
+    padding: 8px;
+    font-size: 16px;
+    background-color: coral;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    height: 40px;
+    box-sizing: border-box;
 }
-
+.addBtn i {
+    font-size: 22px;
+    margin-right: 10px;
+}
 
 #title{
     display: flex;
@@ -75,8 +138,9 @@ body > * {
 
 #title > p {
     font-family: titleFont;
-    font-size: 32px;
+    font-size: 100px;
     font-weight: bold;
+    color: red;
     margin: 0;
 }
 
