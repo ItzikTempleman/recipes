@@ -41,11 +41,18 @@ body > * {
 
 input::placeholder, textarea::placeholder {
     color: black;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
+    font-size: 11px;
 }
 
+#ingredientsTB{
+    padding-top: 16px;
+}
+textarea, input {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding-left: 10px;
+}
 
 .form-wrapper {
     padding: 10px;
