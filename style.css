@@ -1,0 +1,82 @@
+body {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+}
+
+body > * {
+    justify-content: center;
+}
+
+#containerDiv {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+}
+
+.recipeCard {
+    padding: 8px;
+    max-width: 600px;
+    position: relative;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    width: 200px;
+    min-height: 240px;
+    scrollbar-width: none;
+}
+
+.recipeCard .bi-trash {
+    color: #1e7d8c;
+    object-fit: cover;
+    z-index: -1;
+    top: 4px;
+    right:4px;
+}
+
+.recipeCard img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+.inputRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.inputRow >*{
+
+    padding: 4px;
+    margin: 4px;
+}
+
+.addBtn{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    padding: 4px;
+    margin: 4px;
+}
+
+
+#title{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+#title > p {
+    font-family: titleFont;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+

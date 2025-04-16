@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="fonts_layout.css?v=1.2">
     <link rel="stylesheet" href="style.css?v=1.2">
-
+    <link rel="stylesheet" href="images_layout.css?v=1.2">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
@@ -15,14 +16,43 @@
 <body>
 
 <header>
+    <div class="backgroundWallpaperContainer">
+        <div class="topRow"></div>
+
+        <div class="midRow">
+            <div id="mid-left-img"></div>
+            <div id="mid-center-img"></div>
+            <div id="mid-right-img"></div>
+        </div>
+
+        <div class="bottomRow"></div>
+    </div>
+
     <div id="topToolbar">
         <h2 id="title">
             <p>Easy recipes</p>
         </h2>
     </div>
+
 </header>
 
-
+<form method="dialog" onsubmit="addRecipe()">
+    <div class="dishInputForm">
+        <div class="inputRow">
+            <input type="text" id="dishNameInput" placeholder="What are you cooking?">
+            <textarea id="ingredientsTB" placeholder="What are the ingredients?"></textarea>
+            <input type="number" id="servingsInput" placeholder="For how many people?">
+            <input type="text" id="instructionsInput" placeholder="Please describe the preparation">
+            <input type="text" id="dishImageInput" placeholder="Upload an image">
+        </div>
+        <br>
+        <button class="addBtn">
+            <i class="bi bi-plus-circle"></i>
+            Add dish recipe
+        </button>
+    </div>
+</form>
+<div id="containerDiv"></div>
 </body>
 <footer>
 
