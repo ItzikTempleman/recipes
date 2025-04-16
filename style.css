@@ -34,6 +34,12 @@ body > * {
 
 }
 
+#dishNameInput :hover,
+#ingredientsTB :hover,
+#servingsInput :hover,
+#instructionsInput :hover,
+#dishImageInput :hover,
+.addBtn:hover,
 .recipeCard:hover {
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
     transform: translateY(-8px) scale(1.02);
@@ -41,12 +47,13 @@ body > * {
 
 input::placeholder, textarea::placeholder {
     color: black;
-    font-size: 11px;
+    font-size: 20px;
 }
 
-#ingredientsTB{
+#ingredientsTB {
     padding-top: 16px;
 }
+
 textarea, input {
     display: flex;
     align-items: center;
@@ -62,37 +69,24 @@ textarea, input {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     width: 70%;
-    margin: 20px auto;
+    margin: auto;
     border: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
     align-items: center;
     opacity: 4;
 }
 
-
-
 .recipeCard .bi-trash {
     color: red;
     float: right;
 }
 
-.recipeCard .bi-pencil{
+.recipeCard .bi-pencil {
     color: deepskyblue;
     float: right;
     padding-right: 20px;
 }
 
-.dishInputForm {
-    text-align: center;
-}
-
-.dishInputForm {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
 
 .recipeCard img {
     width: 100%;
@@ -108,16 +102,14 @@ textarea, input {
     flex-wrap: wrap;
     gap: 12px;
     align-items: center;
-
-
 }
 
-.inputRow >*{
-border-radius: 10px;
+
+.inputRow > * {
+    border-radius: 10px;
     padding: 4px;
     margin: 4px;
-    border:none;
-    color: black;
+    border: none;
     font-size: 16px;
     scroll-behavior: smooth;
     resize: none;
@@ -127,49 +119,50 @@ border-radius: 10px;
     vertical-align: middle;
 }
 
- .ingredient-info, .instructions-info, #ingredients,
- #servings,#instructions
- {
+.ingredient-info, .instructions-info, #ingredients,
+#servings, #instructions {
     display: block;
     text-align: center;
 }
 
 
 #name, #ingredients, #name,
-#servings,#instructions{
+#servings, #instructions {
     font-weight: bold;
 }
 
-#name{
+#name {
     font-size: 24px;
 }
 
-.ingredient-info, .instructions-info{
+.ingredient-info, .instructions-info {
     font-weight: normal;
 }
-.addBtn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    font-size: 16px;
+
+.addBtn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
     background-color: coral;
     color: white;
     border: none;
-    border-radius: 10px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    height: 40px;
-    box-sizing: border-box;
-}
-.addBtn i {
-    font-size: 22px;
-    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#title{
+
+.addBtn i {
+    font-size: 22px;
+    margin: 0;
+}
+
+#title {
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
 }
 
