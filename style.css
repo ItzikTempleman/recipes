@@ -18,11 +18,10 @@ body > * {
 }
 
 .recipeCard {
-    padding: 8px;
+    padding: 4px;
     max-width: 600px;
     position: relative;
-    background-color: white;
-
+    background-color: rgba(255, 255, 255, 0.91);
     transform: translateY(-6px);
     border-radius: 10px;
     margin: 10px;
@@ -63,10 +62,6 @@ input::placeholder, textarea::placeholder {
     opacity: 4;
 }
 
-.form-wrapper:hover {
-    box-shadow: 0 16px 12px rgba(0, 0, 0, 0.35);
-    transform: translateY(-4px) scale(1.02);
-}
 
 
 .recipeCard .bi-trash {
@@ -125,7 +120,26 @@ border-radius: 10px;
     vertical-align: middle;
 }
 
+ .ingredient-info, .instructions-info, #ingredients,
+ #servings,#instructions
+ {
+    display: block;
+    text-align: center;
+}
 
+
+#name, #ingredients, #name,
+#servings,#instructions{
+    font-weight: bold;
+}
+
+#name{
+    font-size: 24px;
+}
+
+.ingredient-info, .instructions-info{
+    font-weight: normal;
+}
 .addBtn{
     display: flex;
     align-items: center;

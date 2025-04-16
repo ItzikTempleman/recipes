@@ -56,9 +56,13 @@ function displayRecipe() {
              
                 <strong><p id="name">${recipeItem.dishName}</p></strong>
            
-                <p id="servings"><strong>Servings</strong><br> ${recipeItem.servings}</p>
-                <p id="ingredients"><strong>Ingredients</strong><br>${recipeItem.ingredients}</p>
-                <p id="instructions"><strong>Instructions</strong><br> ${recipeItem.instructions}</p>
+                <p id="servings"><strong>Servings:</strong> ${recipeItem.servings}</p>
+                <p id="ingredients"><strong>Ingredients</strong><br>
+                 <span class="ingredient-info">${recipeItem.ingredients}</span>
+                </p>
+                <p id="instructions"><strong>Instructions</strong><br> 
+                <span class="instructions-info">${recipeItem.instructions}</span>
+                </p>
             </div>
         `
         dynamicRecipeCardDiv += recipeCrd
