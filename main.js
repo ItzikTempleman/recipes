@@ -1,15 +1,15 @@
 "use strict";
 
 let recipeList = []
+let propertyNames = [`name`, `ingredients`, `servings`, `instructions`, `image url`]
 
 const dishNameInput = document.getElementById("dishNameInput")
 const ingredientsTB = document.getElementById("ingredientsTB")
 const servingsInput = document.getElementById("servingsInput")
 const instructionsInput = document.getElementById("instructionsInput")
 const dishImageInput = document.getElementById("dishImageInput")
-
-
-
+const editOptionDiv = document.getElementById("editOptionDiv")
+const editTextArea = document.getElementById("editTextArea")
 function addRecipe() {
     createRecipe()
     displayRecipe()
@@ -29,7 +29,8 @@ function createRecipe() {
         ingredients,
         servings,
         instructions,
-        imageUrl
+        imageUrl,
+        isEditable: false
     }
 
     if (isValidFields(recipe)) {
@@ -87,7 +88,6 @@ function isValidFields(recipe) {
     return true
 }
 
-
 function saveAndUpdateRecipe() {
     const json = JSON.stringify(recipeList)
     localStorage.setItem(`recipes`, json)
@@ -102,11 +102,9 @@ function loadRecipes() {
     displayRecipe()
 }
 
-
 function alertMissingData(message) {
     alert(`${message}`)
 }
-
 
 function deleteRecipe(recipe) {
     recipeList.splice(recipe)
@@ -123,6 +121,33 @@ function clearForm() {
     dishImageInput.value = ""
 }
 
-function editRecipe(recipe){
+function editRecipe(index) {
+    let recipe = recipeList[index]
+    recipe.isEditable = !recipe.isEditable
+    console.log(recipe.isEditable)
 
+    if (recipe.isEditable) {
+        editOptionDiv.style.display = "block"
+
+        editOptionDiv.innerHTML = `
+            <div>
+                <p><strong>${recipe.dishName}</strong></p>
+                <p onclick="editProperty('${recipe.dishName}', ${recipe.isEditable}, ${recipe})">Edit ${propertyNames[0]}</p><hr>
+                <p onclick="editProperty('${recipe.ingredients}', ${recipe.isEditable})">Edit ${propertyNames[1]}</p><hr>
+                <p onclick="editProperty('${recipe.servings}', ${recipe.isEditable})">Edit ${propertyNames[2]}</p><hr>
+                <p onclick="editProperty('${recipe.instructions}', ${recipe.isEditable})">Edit ${propertyNames[3]}</p><hr>
+                <p onclick="editProperty('${recipe.imageUrl}', ${recipe.isEditable})">Edit ${propertyNames[4]}</p>
+            </div>`
+    } else {
+        editOptionDiv.style.display = "none"
+        editOptionDiv.innerHTML = ""
+    }
+}
+
+function editProperty(property, isRecipeEditable,recipe) {
+
+
+
+    editOptionDiv.style.display = "none"
+    editOptionDiv.innerHTML = ""
 }

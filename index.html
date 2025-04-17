@@ -34,24 +34,25 @@
         </h2>
     </div>
 
+    <span class="editingContainer">
+    <div id="editOptionDiv" style="display: none;"> </div>
+    <div id="editTextArea" style="display: none;"> </div>
+        </span>
 </header>
 
 <div class="form-wrapper">
     <form method="dialog" onsubmit="addRecipe()">
-
-            <div class="inputRow">
-                <input type="text" id="dishNameInput" placeholder="Dish name">
-                <textarea id="ingredientsTB" placeholder="Ingredients"></textarea>
-                <input type="number" id="servingsInput" placeholder="# of servings">
-                <input type="text" id="instructionsInput" placeholder="Instructions">
-                <input type="text" id="dishImageInput" placeholder="Upload an image">
-            <button class="addBtn">
-                <i class="bi bi-plus-circle"></i>
-            </button>
+        <div class="inputRow">
+            <input type="text" id="dishNameInput" placeholder="Dish name">
+            <textarea id="ingredientsTB" placeholder="Ingredients"></textarea>
+            <input type="number" id="servingsInput" placeholder="# of servings">
+            <input type="text" id="instructionsInput" placeholder="Instructions">
+            <input type="text" id="dishImageInput" placeholder="Upload an image">
+            <button class="addBtn"><i class="bi bi-plus-circle"></i>Add to list</button>
         </div>
-
     </form>
 </div>
+<br>
 <div id="containerDiv"></div>
 </body>
 <footer>
