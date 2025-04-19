@@ -17,6 +17,11 @@ body > * {
     padding: 10px;
 }
 
+#editingContainer {
+    display: flex;
+    flex-direction: row;
+}
+
 .recipeCard {
     padding: 4px;
     max-width: 600px;
@@ -33,12 +38,14 @@ body > * {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 
 }
+#editOptionDiv,
+#editTextAreaDiv {
+    flex: 1;
+}
 
 #editOptionDiv {
-    position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 1000;
     background-color: white;
     padding: 12px;
     border: 1px solid gray;

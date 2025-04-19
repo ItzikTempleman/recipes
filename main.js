@@ -1,15 +1,18 @@
 "use strict";
 
 let recipeList = []
-let propertyNames = [`name`, `ingredients`, `servings`, `instructions`, `image url`]
+let propertyNames = [`dishName`, `ingredients`, `servings`, `instructions`, `imageUrl`]
 
 const dishNameInput = document.getElementById("dishNameInput")
 const ingredientsTB = document.getElementById("ingredientsTB")
 const servingsInput = document.getElementById("servingsInput")
 const instructionsInput = document.getElementById("instructionsInput")
 const dishImageInput = document.getElementById("dishImageInput")
+const editingContainer = document.getElementById("editingContainer")
 const editOptionDiv = document.getElementById("editOptionDiv")
-const editTextArea = document.getElementById("editTextArea")
+const editTextAreaDiv = document.getElementById("editTextAreaDiv")
+
+
 function addRecipe() {
     createRecipe()
     displayRecipe()
@@ -25,12 +28,7 @@ function createRecipe() {
     let imageUrl = dishImageInput.value
 
     const recipe = {
-        dishName,
-        ingredients,
-        servings,
-        instructions,
-        imageUrl,
-        isEditable: false
+        dishName, ingredients, servings, instructions, imageUrl, isEditable: false
     }
 
     if (isValidFields(recipe)) {
@@ -124,30 +122,38 @@ function clearForm() {
 function editRecipe(index) {
     let recipe = recipeList[index]
     recipe.isEditable = !recipe.isEditable
-    console.log(recipe.isEditable)
-
     if (recipe.isEditable) {
-        editOptionDiv.style.display = "block"
+        editingContainer.style.display = "flex"
 
         editOptionDiv.innerHTML = `
             <div>
-                <p><strong>${recipe.dishName}</strong></p>
-                <p onclick="editProperty('${recipe.dishName}', ${recipe.isEditable}, ${recipe})">Edit ${propertyNames[0]}</p><hr>
-                <p onclick="editProperty('${recipe.ingredients}', ${recipe.isEditable})">Edit ${propertyNames[1]}</p><hr>
-                <p onclick="editProperty('${recipe.servings}', ${recipe.isEditable})">Edit ${propertyNames[2]}</p><hr>
-                <p onclick="editProperty('${recipe.instructions}', ${recipe.isEditable})">Edit ${propertyNames[3]}</p><hr>
-                <p onclick="editProperty('${recipe.imageUrl}', ${recipe.isEditable})">Edit ${propertyNames[4]}</p>
+                <p><strong>Edit ${recipe.dishName} properties</strong></p>
+                <p onclick="editProperty('${propertyNames[0]}', ${index})"> ${propertyNames[0]}</p><hr>
+                <p onclick="editProperty('${propertyNames[1]}', ${index})"> ${propertyNames[1]}</p><hr>
+                <p onclick="editProperty('${propertyNames[2]}', ${index})"> ${propertyNames[2]}</p><hr>
+                <p onclick="editProperty('${propertyNames[3]}', ${index})"> ${propertyNames[3]}</p><hr>
+                <p onclick="editProperty('${propertyNames[4]}', ${index})"> ${propertyNames[4]}</p>
             </div>`
     } else {
-        editOptionDiv.style.display = "none"
         editOptionDiv.innerHTML = ""
+        editTextAreaDiv.innerHTML = ""
+        editingContainer.style.display = "none"
     }
 }
 
-function editProperty(property, isRecipeEditable,recipe) {
+function editProperty(propertyName, index) {
+    const recipe = recipeList[index]
 
+    editTextAreaDiv.innerHTML =
+        `
+        <div>
+            <textarea id="editPropertyTB" placeholder="Edit ${propertyName}"></textarea>
+            <button onclick="updateRecipe(${recipe})">Update recipe</button>
+        </div>
+    `
+}
 
-
-    editOptionDiv.style.display = "none"
-    editOptionDiv.innerHTML = ""
+function updateRecipe(recipe) {
+    console.log(recipe)
+//let newRecipe
 }
