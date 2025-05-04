@@ -1,16 +1,14 @@
-"use strict";
+"use strict"
 
 let recipeList = []
-let propertyNames = [`dishName`, `ingredients`, `servings`, `instructions`, `imageUrl`]
+
 
 const dishNameInput = document.getElementById("dishNameInput")
 const ingredientsTB = document.getElementById("ingredientsTB")
 const servingsInput = document.getElementById("servingsInput")
 const instructionsInput = document.getElementById("instructionsInput")
 const dishImageInput = document.getElementById("dishImageInput")
-const editingContainer = document.getElementById("editingContainer")
-const editOptionDiv = document.getElementById("editOptionDiv")
-const editTextAreaDiv = document.getElementById("editTextAreaDiv")
+
 
 
 function addRecipe() {
@@ -46,20 +44,20 @@ function displayRecipe() {
 
         let recipeCrd = `
             <div class="recipeCard">
-                       <div id="recipeImage">
+                       <div class="recipeImage">
                     <img src="${recipeItem.imageUrl}">
                     <span class="bi bi-trash" onclick="deleteRecipe(${index})"></span>
-                    <span class="bi bi-pencil" onclick="editRecipe(${index})"></span>
+              
                 </div>
                 <br>
              
-                <strong><p id="name">${recipeItem.dishName}</p></strong>
+                <strong><p class="name">${recipeItem.dishName}</p></strong>
            
-                <p id="servings"><strong>Servings:</strong> ${recipeItem.servings}</p>
-                <p id="ingredients"><strong>Ingredients</strong><br>
+                <p class="servings"><strong>Servings:</strong> ${recipeItem.servings}</p>
+                <p class="ingredients"><strong>Ingredients</strong><br>
                  <span class="ingredient-info">${recipeItem.ingredients}</span>
                 </p>
-                <p id="instructions"><strong>Instructions</strong><br> 
+                <p class="instructions"><strong>Instructions</strong><br> 
                 <span class="instructions-info">${recipeItem.instructions}</span>
                 </p>
             </div>
@@ -117,43 +115,4 @@ function clearForm() {
     ingredientsTB.value = ""
     instructionsInput.value = ""
     dishImageInput.value = ""
-}
-
-function editRecipe(index) {
-    let recipe = recipeList[index]
-    recipe.isEditable = !recipe.isEditable
-    if (recipe.isEditable) {
-        editingContainer.style.display = "flex"
-
-        editOptionDiv.innerHTML = `
-            <div>
-                <p><strong>Edit ${recipe.dishName} properties</strong></p>
-                <p onclick="editProperty('${propertyNames[0]}', ${index})"> ${propertyNames[0]}</p><hr>
-                <p onclick="editProperty('${propertyNames[1]}', ${index})"> ${propertyNames[1]}</p><hr>
-                <p onclick="editProperty('${propertyNames[2]}', ${index})"> ${propertyNames[2]}</p><hr>
-                <p onclick="editProperty('${propertyNames[3]}', ${index})"> ${propertyNames[3]}</p><hr>
-                <p onclick="editProperty('${propertyNames[4]}', ${index})"> ${propertyNames[4]}</p>
-            </div>`
-    } else {
-        editOptionDiv.innerHTML = ""
-        editTextAreaDiv.innerHTML = ""
-        editingContainer.style.display = "none"
-    }
-}
-
-function editProperty(propertyName, index) {
-    const recipe = recipeList[index]
-
-    editTextAreaDiv.innerHTML =
-        `
-        <div>
-            <textarea id="editPropertyTB" placeholder="Edit ${propertyName}"></textarea>
-            <button onclick="updateRecipe(${recipe})">Update recipe</button>
-        </div>
-    `
-}
-
-function updateRecipe(recipe) {
-    console.log(recipe)
-//let newRecipe
 }

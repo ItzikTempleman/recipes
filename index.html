@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Itzik's recipe website</title>
-    <link rel="stylesheet" href="fonts_layout.css?v=1.2">
-    <link rel="stylesheet" href="style.css?v=1.2">
-    <link rel="stylesheet" href="images_layout.css?v=1.2">
+    <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/fonts_layout.css?v=1.2">
+    <link rel="stylesheet" href="styles/style.css?v=1.2">
+    <link rel="stylesheet" href="styles/images_layout.css?v=1.2">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
@@ -20,16 +21,16 @@
         <div class="topRow"></div>
 
         <div class="midRow">
-            <div id="mid-left-img"></div>
-            <div id="mid-center-img"></div>
-            <div id="mid-right-img"></div>
+            <div class="mid-left-img"></div>
+            <div class="mid-center-img"></div>
+            <div class="mid-right-img"></div>
         </div>
 
         <div class="bottomRow"></div>
     </div>
 
-    <div id="topToolbar">
-        <h2 id="title">
+    <div class="topToolbar">
+        <h2 class="title">
             <p>Easy recipes</p>
         </h2>
     </div>
@@ -43,23 +44,20 @@
 <div class="form-wrapper">
     <form method="dialog" onsubmit="addRecipe()">
         <div class="inputRow">
-            <input type="text" id="dishNameInput" placeholder="Dish name">
-            <textarea id="ingredientsTB" placeholder="Ingredients"></textarea>
-            <input type="number" id="servingsInput" placeholder="# of servings">
-            <input type="text" id="instructionsInput" placeholder="Instructions">
-            <input type="text" id="dishImageInput" placeholder="Upload an image">
+            <input type="text" class="dishNameInput" id="dishNameInput" placeholder="Dish name">
+            <textarea class="ingredientsTB" id="ingredientsTB" placeholder="Ingredients"></textarea>
+            <input type="number" class="servingsInput" id="servingsInput" placeholder="# of servings">
+            <input type="text" class="instructionsInput" id="instructionsInput" placeholder="Instructions">
+            <input type="text" class="dishImageInput" id="dishImageInput" placeholder="Upload an image">
             <button class="addBtn"><i class="bi bi-plus-circle"></i>Add to list</button>
         </div>
     </form>
 </div>
 <br>
-<div id="containerDiv"></div>
+<div id="containerDiv" class="containerDiv"></div>
 <footer>
 
 </footer>
 </body>
 
 </html>
-
-<!--class="."-->
-<!--id="#"-->

@@ -9,7 +9,7 @@ body > * {
     justify-content: center;
 }
 
-#containerDiv {
+.containerDiv {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -17,7 +17,7 @@ body > * {
     padding: 10px;
 }
 
-#editingContainer {
+.editingContainer {
     display: flex;
     flex-direction: row;
 }
@@ -38,12 +38,12 @@ body > * {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 
 }
-#editOptionDiv,
-#editTextAreaDiv {
+.editOptionDiv,
+.editTextAreaDiv {
     flex: 1;
 }
 
-#editOptionDiv {
+.editOptionDiv {
     top: 20px;
     left: 20px;
     background-color: white;
@@ -66,7 +66,7 @@ input::placeholder, textarea::placeholder {
     font-size: 20px;
 }
 
-#ingredientsTB {
+.ingredientsTB {
     padding-top: 8px;
 }
 
@@ -97,11 +97,7 @@ textarea, input {
     float: right;
 }
 
-.recipeCard .bi-pencil {
-    color: deepskyblue;
-    float: right;
-    padding-right: 20px;
-}
+
 
 
 .recipeCard img {
@@ -136,18 +132,18 @@ textarea, input {
 }
 
 .ingredient-info, .instructions-info, #ingredients,
-#servings, #instructions {
+.servings, #instructions {
     display: block;
     text-align: center;
 }
 
 
-#name, #ingredients, #name,
-#servings, #instructions {
+.name, .ingredients, .name,
+.servings, .instructions {
     font-weight: bold;
 }
 
-#name {
+.name {
     font-size: 24px;
 }
 
@@ -172,14 +168,14 @@ textarea, input {
 }
 
 
-#title {
+.title {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 
-#title > p {
+.title > p {
     font-family: titleFont;
     font-size: 120px;
     font-weight: bold;
